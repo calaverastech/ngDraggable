@@ -1,3 +1,4 @@
+/*jshint -W030 */
 /*
  *
  * https://github.com/fatlinesofcode/ngDraggable
@@ -113,7 +114,7 @@ angular.module("ngDraggable", [])
                         return;
                     }
 
-                    if (evt.type == "mousedown" && evt.button != 0) {
+                    if (evt.type == "mousedown" && evt.button !== 0) {
                         // Do not start dragging on right-click
                         return;
                     }
@@ -379,10 +380,10 @@ angular.module("ngDraggable", [])
                     var bounds = element[0].getBoundingClientRect();// ngDraggable.getPrivOffset(element);
                     x -= $document[0].body.scrollLeft + $document[0].documentElement.scrollLeft;
                     y -= $document[0].body.scrollTop + $document[0].documentElement.scrollTop;
-                    return  x >= bounds.left
-                        && x <= bounds.right
-                        && y <= bounds.bottom
-                        && y >= bounds.top;
+                    return  x >= bounds.left &&
+                        x <= bounds.right &&
+                        y <= bounds.bottom &&
+                        y >= bounds.top;
                 };
 
                 initialize();
