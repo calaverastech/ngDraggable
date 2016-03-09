@@ -561,7 +561,7 @@ angular.module("ngDraggable", [])
                                     callback.apply(null, args);
                                     nextFrame(callback);
                                 });
-                            })
+                            });
                         }
                     }
 
